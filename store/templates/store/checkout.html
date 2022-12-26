@@ -1,0 +1,119 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+<div class = "row">
+
+    
+    <div class="col-lg-6">
+
+        <div class="my-3 d-flex">
+            
+            <a href="{% url 'store' %}" class="btn btn-warning  ">&#8592; Back to cart</a>
+   
+        </div>
+        <hr>
+
+        <div class="card">
+            <div class="card-body">
+                <h4 class="card-title">Resumen de compra:</h4>
+                
+                <table class="table my-3">
+                    <thead class="thead-dark">
+                      <tr>
+                        <th scope="col">Producto</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Link</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Lapiz</td>
+                        <td>
+                            <div class="d-flex">
+                                <p> 3 </p>
+
+                            </div> 
+                        </td>
+                        <td>50</td>
+                        <td> 
+                            <div class="d-flex">
+                                <a href="" class="btn btn-primary"> Ver publicación</a>
+                            </div>
+                        </td>
+                      </tr>
+                      
+                    </tbody>
+                  </table>
+                  <h4>Total:</h4>
+              </div>
+
+        </div>
+        
+    </div>
+
+    <div class="col-lg-6">
+        <form class="my-4">
+
+            <div class="form-row" id = "usuario-info">
+                <h4>Datos de envío</h4>
+                <hr>
+                <div class="form-group my-2">
+                  <label for="inputnombre">Nombre:</label>
+                  <input type="text" class="form-control" id="inputnombre" placeholder="Ingrese su nombre...">
+                </div>
+                <div class="form-group my-2">
+                  <label for="inputapellido">Apellido: </label>
+                  <input type="text" class="form-control" id="inputapellido" placeholder="Ingrese su apellido...">
+                </div>
+
+                <div class="form-group my-2">
+                    <label for="inputtelefono">Telefono: </label>
+                    <input type="number" class="form-control" id="inputtelefono" placeholder="Ingrese su telefono...">
+                  </div>
+
+            </div>
+
+            <div class="form-row" id ="envio-info">
+
+                <div class="form-group row my-4" >
+                    <label for="inputdireccion" class="col-sm-2 col-form-label">Direccion: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputdireccion" placeholder="Ingrese la direccion...">
+                    </div>
+                </div>
+
+                <div class="form-group row my-4">
+                    <label for="inputpostal" class="col-sm-2 col-form-label">Código postal: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputpostal" placeholder="Ingrese el código postal...">
+                    </div>
+                </div>
+                
+                <div class="form-group row my-4">
+                    <label for="inputciudad" class="col-sm-2 col-form-label">Ciudad: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputciudad" placeholder="Ingrese la ciudad...">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="inputprovincia" class="col-sm-2 col-form-label">Provincia: </label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="inputprovincia" placeholder="Ingrese la provincia...">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <button type="submit" class="btn btn-success my-2">Listo!</button>
+                </div>
+            </div>
+          </form>
+    </div>
+
+
+</div>
+{% endblock%}

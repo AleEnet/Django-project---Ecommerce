@@ -1,0 +1,30 @@
+{% extends 'store/main.html' %}
+{% load static %}
+
+{% block content %}
+<div class = "row">
+    {% for productos in productos%}
+    <div class = "col-lg-3 my-4">
+        
+        <div class="card" >
+            <img src= "{{productos.imageURL}}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <p class="card-text d-flex">
+                <h5>{{productos.nombre}}</h5>
+                </p>
+                <hr>
+                <div class="d-flex" >
+                    <a href="" class="btn btn-outline-secondary btn-sm m-1">View</a>
+                    <a href="" class="btn btn-outline-success btn-sm m-1"> Add to cart</a>
+                    <p class="m-1"><strong>${{productos.precio|floatformat:0}}</strong></p>
+                    
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock%}

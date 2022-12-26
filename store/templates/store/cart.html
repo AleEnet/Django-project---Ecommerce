@@ -1,0 +1,77 @@
+{% extends 'store/main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="row my-4">
+    <div class = "col-8">
+        <a href="{% url 'store' %}" class="btn btn-outline-warning">&#8592; Back to Store</a>
+        <hr>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">Items</th>
+                <th scope="col">N°</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Link</th>
+              </tr>
+            </thead>
+            {% for items in items %}
+            <tbody>
+              <tr>
+                <td>{{items.producto.nombre}}</td>
+                <td>
+                    <div class="d-flex">
+                        <p> {{items.cantidad}} </p>
+                        <div>
+                            <img class="arrow" src="{% static 'images/arrow-up.png' %}" alt="">
+                            <img class="arrow" src="{% static 'images/arrow-down.png' %}" alt="">
+                        </div>
+                    </div> 
+                </td>
+                <td>{{items.producto.precio}}</td>
+                <td> 
+                    <div class="d-flex">
+                        <a href="" class="btn btn-primary"> Ver publicación</a>
+                    </div>
+                </td>
+              </tr>
+              
+            </tbody>
+            {% endfor %}
+          </table>
+        
+    </div>
+
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Tu compra:</h5>
+                <br>
+                <table class="table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Items</th>
+                        <th scope="col">$</th>
+                        <th scope="col">Subtotal:</th>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Lapiz</th>
+                            <td>50</td>
+                            <td>150</td>
+                        </tr>
+              
+                    </tbody>
+                  </table>
+                  
+                  <h5>Total: </h5>
+                  <a href="{% url 'checkout' %}" class="btn btn-success">Listo!</a>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+
+
+{% endblock%}
